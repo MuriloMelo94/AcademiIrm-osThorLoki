@@ -25,9 +25,11 @@ O sistema é um software de gerenciamento de clientes, funcionários e visitante
 Até o momento, algumas telas já foram produzidas e, também, as codificações estão sendo aprimoradas em cada camada do `MVC (Model, View, Controller)`, utilizando-se, dessa maneira, uma das arquiteturas de padrão de software para que eventuais refatoramentos possam se dar de maneira mais facilitada.
 
 O sistema está conectado com o PostgresSQL na porta padrão e com senha 123. Já foram realizados testes para verificação dos métodos aplicados para o cadastramento dos dados através das telas do sistema, ao clicar no botão respectivo de salvamento, na tela de cadastramento para login. Na imagem abaixo, é possível ver alguns testes realizados. Ainda será preciso trabalhar no `PostgreSQL` para que a coluna das senhas não mostre os seus valores.
+
 ![image](https://user-images.githubusercontent.com/80219103/203170948-a298cb79-d8f7-4531-b97c-dea50ea0e883.png)
 
 Até o momento, a tela e a codificação mais trabalhadas foram as telas de login e de cadastramento de novo usuário para uso do sistema. A intenção é que novas telas para gerenciamento dos funcionários, visitantes e clientes sejam adicionadas. Abaixo, é possível ver um pouco mais das classes do sistema.
+
 ![image](https://user-images.githubusercontent.com/80219103/203171786-b41268f8-12f5-4a83-b3d6-c3c028186a55.png)
 
 ![image](https://user-images.githubusercontent.com/80219103/203171817-bf7b0140-7dbe-4f05-86f2-8ae39af75fd0.png)
