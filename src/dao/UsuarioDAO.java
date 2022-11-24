@@ -4,6 +4,7 @@ import java.sql.Connection;
 import model.Usuario;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UsuarioDAO {
     
@@ -18,7 +19,20 @@ public class UsuarioDAO {
             String sql = "INSERT INTO usuario (usuario,senha) values('"+usuario.getUsuario()+"','"+usuario.getSenha()+"'); ";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.execute();
-            connection.close();
+            
+        } catch (SQLException e){
+            throw new RuntimeException("Houve um erro ao cadastrar o novo usuário!", e);
+        }
+    }
+    
+    public boolean existeNoBancoPorUsuarioESenha(Usuario usuario){
+        try {
+            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario()+"' AND senha = '"+usuario.getSenha()+"'";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.execute();
+            ResultSet resultSet = stm.getResultSet();
+            
+            return resultSet.next();
             
         } catch (SQLException e){
             throw new RuntimeException("Houve um erro ao cadastrar o novo usuário!", e);

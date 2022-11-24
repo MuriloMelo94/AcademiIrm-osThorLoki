@@ -4,17 +4,27 @@
  */
 package view;
 
+import controller.LoginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Murilo Melo
  */
 public class LoginView extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form TelaDeLogin
      */
     public LoginView() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -33,7 +43,7 @@ public class LoginView extends javax.swing.JFrame {
         botaoLoginEntrar = new javax.swing.JButton();
         botaoLoginCadastrar = new javax.swing.JButton();
         botaoLoginSair = new javax.swing.JButton();
-        senhaLogin = new javax.swing.JPasswordField();
+        campoSenhaLogin = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +92,7 @@ public class LoginView extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(botaoLoginEntrar)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(senhaLogin, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campoSenhaLogin, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoLoginUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(45, 45, 45))
         );
@@ -96,7 +106,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(senhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoSenhaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoLoginEntrar)
                 .addGap(40, 40, 40)
@@ -138,7 +148,11 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoLoginCadastrarActionPerformed
 
     private void botaoLoginEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginEntrarActionPerformed
-        // TODO add your handling code here:
+        try {
+            controller.autenticar();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoLoginEntrarActionPerformed
 
     /**
@@ -177,15 +191,33 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
+    public JTextField getCampoLoginUsuario() {
+        return campoLoginUsuario;
+    }
+
+    public void setCampoLoginUsuario(JTextField campoLoginUsuario) {
+        this.campoLoginUsuario = campoLoginUsuario;
+    }
+
+    public JPasswordField getCampoSenhaLogin() {
+        return campoSenhaLogin;
+    }
+
+    public void setCampoSenhaLogin(JPasswordField campoSenhaLogin) {
+        this.campoSenhaLogin = campoSenhaLogin;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoLoginCadastrar;
     private javax.swing.JButton botaoLoginEntrar;
     private javax.swing.JButton botaoLoginSair;
     private javax.swing.JTextField campoLoginUsuario;
+    private javax.swing.JPasswordField campoSenhaLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField senhaLogin;
     // End of variables declaration//GEN-END:variables
 }

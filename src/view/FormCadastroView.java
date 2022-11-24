@@ -5,10 +5,9 @@
 package view;
 
 import controller.FormCadastroController;
-import dao.ConnectionFactory;
-import dao.UsuarioDAO;
-import model.Usuario;
-import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -94,7 +93,11 @@ public class FormCadastroView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoSalvarTelaCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarTelaCadastroActionPerformed
-        controller.salvaNovoUsuario();
+        try {
+            controller.salvaNovoUsuario();
+        } catch (SQLException ex) {
+            Logger.getLogger(FormCadastroView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botaoSalvarTelaCadastroActionPerformed
 
     /**

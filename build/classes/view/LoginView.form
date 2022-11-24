@@ -63,7 +63,7 @@
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Component id="botaoLoginEntrar" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="senhaLogin" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="campoSenhaLogin" alignment="0" max="32767" attributes="0"/>
                                       <Component id="campoLoginUsuario" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -84,7 +84,7 @@
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="senhaLogin" min="-2" max="-2" attributes="0"/>
+                  <Component id="campoSenhaLogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="botaoLoginEntrar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -134,7 +134,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoLoginSairActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="senhaLogin">
+        <Component class="javax.swing.JPasswordField" name="campoSenhaLogin">
         </Component>
       </SubComponents>
     </Container>

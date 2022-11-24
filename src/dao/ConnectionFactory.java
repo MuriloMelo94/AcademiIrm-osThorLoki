@@ -13,7 +13,7 @@ public class ConnectionFactory {
         
         try {
             conexao_PostgreSQL = DriverManager.getConnection(LINK1, usuario, senha);
-            System.out.println("Teste: Conexão com o BD aberta com sucesso!");
+            System.out.println("Teste: Conexão com o BD feita com sucesso!");
         } catch (SQLException e){
             throw new RuntimeException("Ocorreu um problema ao conectar com o Banco de Dados", e);
         }
