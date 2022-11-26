@@ -16,7 +16,7 @@ public class UsuarioDAO {
     
     public void insert(Usuario usuario){
         try {
-            String sql = "INSERT INTO usuario (usuario,senha) values('"+usuario.getUsuario()+"','"+usuario.getSenha()+"'); ";
+            String sql = "INSERT INTO usuario (usuario,senha) values('"+usuario.getUsuario().toUpperCase()+"','"+usuario.getSenha()+"'); ";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.execute();
             
@@ -27,7 +27,21 @@ public class UsuarioDAO {
     
     public boolean existeNoBancoPorUsuarioESenha(Usuario usuario){
         try {
-            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario()+"' AND senha = '"+usuario.getSenha()+"'";
+            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario().toUpperCase()+"' AND senha = '"+usuario.getSenha()+"'";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.execute();
+            ResultSet resultSet = stm.getResultSet();
+            
+            return resultSet.next();
+            
+        } catch (SQLException e){
+            throw new RuntimeException("Houve um erro ao cadastrar o novo usuário!", e);
+        }
+    }
+    
+        public boolean existeNoBancoSomentePorUsuario(Usuario usuario){
+        try {
+            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario().toUpperCase()+"'";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.execute();
             ResultSet resultSet = stm.getResultSet();

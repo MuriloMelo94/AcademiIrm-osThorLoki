@@ -36,7 +36,7 @@ public class FormCadastroController {
         //passa a conexao como parametro para que o usuarioDAO crie um objeto com aquela conexão única
         UsuarioDAO usuarios = new UsuarioDAO(conexao);
         
-        if (usuarios.existeNoBancoPorUsuarioESenha(novoUsuarioCadastrado)){
+        if (usuarios.existeNoBancoSomentePorUsuario(novoUsuarioCadastrado)){
             MensagensAvisosView telaAvisoUsuarioCadastradoJaExiste = new MensagensAvisosView();
             telaAvisoUsuarioCadastradoJaExiste.mostrarMensagem("Usuário já existe no Banco de dados", "Usuário Existente", 1);
             conexao.close();
