@@ -144,7 +144,8 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoLoginSairActionPerformed
 
     private void botaoLoginCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginCadastrarActionPerformed
-        // TODO add your handling code here:
+        FormCadastroView telaCadastro = new FormCadastroView();
+        telaCadastro.setVisible(true);
     }//GEN-LAST:event_botaoLoginCadastrarActionPerformed
 
     private void botaoLoginEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginEntrarActionPerformed

@@ -20,7 +20,7 @@ public class ConnectionFactory {
         
         return conexao_PostgreSQL;
     }
-    
+
     public static void closeConnectionPostgreSQL(){
         try {
             if (conexao_PostgreSQL != null){
