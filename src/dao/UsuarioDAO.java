@@ -16,8 +16,12 @@ public class UsuarioDAO {
     
     public void insert(Usuario usuario){
         try {
-            String sql = "INSERT INTO usuario (usuario,senha) values('"+usuario.getUsuario().toUpperCase()+"','"+usuario.getSenha()+"'); ";
+            String sql = "INSERT INTO usuario (usuario,senha) values(?,?); ";
             PreparedStatement stm = connection.prepareStatement(sql);
+            
+            // adicionando validação de dados para evitar SQL injection no banco de dados
+            stm.setString(1, usuario.getUsuario().toUpperCase());
+            stm.setString(2, usuario.getSenha());
             stm.execute();
             
         } catch (SQLException e){
@@ -27,8 +31,12 @@ public class UsuarioDAO {
     
     public boolean existeNoBancoPorUsuarioESenha(Usuario usuario){
         try {
-            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario().toUpperCase()+"' AND senha = '"+usuario.getSenha()+"'";
+            String sql = "SELECT * FROM usuario WHERE usuario = ? AND senha = ? ";
             PreparedStatement stm = connection.prepareStatement(sql);
+            
+            // adicionando validação de dados para evitar SQL injection no banco de dados
+            stm.setString(1, usuario.getUsuario().toUpperCase());
+            stm.setString(2, usuario.getSenha());
             stm.execute();
             ResultSet resultSet = stm.getResultSet();
             
@@ -41,8 +49,11 @@ public class UsuarioDAO {
     
         public boolean existeNoBancoSomentePorUsuario(Usuario usuario){
         try {
-            String sql = "SELECT * FROM usuario WHERE usuario = '"+usuario.getUsuario().toUpperCase()+"'";
+            String sql = "SELECT * FROM usuario WHERE usuario = ? ";
             PreparedStatement stm = connection.prepareStatement(sql);
+            
+            // adicionando validação de dados para evitar SQL injection no banco de dados
+            stm.setString(1, usuario.getUsuario().toUpperCase());
             stm.execute();
             ResultSet resultSet = stm.getResultSet();
             
