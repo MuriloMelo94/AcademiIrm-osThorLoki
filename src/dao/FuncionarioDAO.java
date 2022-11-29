@@ -21,11 +21,11 @@ public class FuncionarioDAO {
             PreparedStatement stm = connection.prepareStatement(sql);
             
             // adicionando validação de dados para evitar SQL injection no banco de dados
-            stm.setString(1, funcionario.getNome());
+            stm.setString(1, funcionario.getNome().toUpperCase());
             stm.setString(2, funcionario.getFuncao());
             stm.setFloat(3, funcionario.getSalario());
             stm.setString(4, funcionario.getEndereco());
-            stm.setInt(5, funcionario.getTelefone());
+            stm.setLong(5, funcionario.getTelefone());
             stm.execute();
             
         } catch (SQLException e){
@@ -39,11 +39,11 @@ public class FuncionarioDAO {
             PreparedStatement stm = connection.prepareStatement(sql);
             
             // adicionando validação de dados para evitar SQL injection no banco de dados
-            stm.setString(1, funcionario.getNome());
+            stm.setString(1, funcionario.getNome().toUpperCase());
             stm.setString(2, funcionario.getFuncao());
             stm.setFloat(3, funcionario.getSalario());
             stm.setString(4, funcionario.getEndereco());
-            stm.setInt(5, funcionario.getTelefone());
+            stm.setLong(5, funcionario.getTelefone());
             stm.setInt(6, funcionario.getId());
             stm.execute();
             
@@ -112,6 +112,41 @@ public class FuncionarioDAO {
             
         } catch (SQLException e){
             throw new RuntimeException("Houve um erro na pesquisa de funcionarios!", e);
+        }
+    }
+    
+        public boolean existeNoBancoPorNomeEFuncao(Funcionario funcionario){
+        try {
+            String sql = "SELECT * FROM funcionario WHERE nome = ? AND funcao = ? ";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            
+            // adicionando validação de dados para evitar SQL injection no banco de dados
+            stm.setString(1, funcionario.getNome().toUpperCase());
+            stm.setString(2, funcionario.getFuncao());
+            stm.execute();
+            ResultSet resultSet = stm.getResultSet();
+            
+            return resultSet.next();
+            
+        } catch (SQLException e){
+            throw new RuntimeException("Houve um erro ao cadastrar o novo funcionario!", e);
+        }
+    }
+    
+        public boolean existeNoBancoSomentePorNome(Funcionario funcionario){
+        try {
+            String sql = "SELECT * FROM funcionario WHERE nome = ? ";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            
+            // adicionando validação de dados para evitar SQL injection no banco de dados
+            stm.setString(1, funcionario.getNome().toUpperCase());
+            stm.execute();
+            ResultSet resultSet = stm.getResultSet();
+            
+            return resultSet.next();
+            
+        } catch (SQLException e){
+            throw new RuntimeException("Houve um erro ao cadastrar o novo funcionario!", e);
         }
     }
     

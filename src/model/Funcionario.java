@@ -6,10 +6,18 @@ public class Funcionario {
     private String funcao;
     private float salario;
     private String endereco;
-    private int telefone;
+    private long telefone;
 
-    public Funcionario(int id, String nome, String funcao, float salario, String endereco, int telefone) {
+    public Funcionario(int id, String nome, String funcao, float salario, String endereco, long telefone) {
         this.id = id;
+        this.nome = nome;
+        this.funcao = funcao;
+        this.salario = salario;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+
+    public Funcionario(String nome, String funcao, float salario, String endereco, long telefone) {
         this.nome = nome;
         this.funcao = funcao;
         this.salario = salario;
@@ -23,9 +31,9 @@ public class Funcionario {
         this.funcao = funcao;
     }
 
-    public Funcionario(String nome, String senha) {
+    public Funcionario(String nome, String funcao) {
         this.nome = nome;
-        this.funcao = senha;
+        this.funcao = funcao;
     }
 
     public Funcionario(int id, String nome) {
@@ -49,11 +57,11 @@ public class Funcionario {
         this.endereco = endereco;
     }
 
-    public int getTelefone() {
+    public long getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(long telefone) {
         this.telefone = telefone;
     }
     
