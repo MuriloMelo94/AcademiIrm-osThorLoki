@@ -42,7 +42,7 @@ public class UsuarioDAO {
             stm.execute();
             
         } catch (SQLException e){
-            throw new RuntimeException("Houve um erro ao atualizar o novo usuário!", e);
+            throw new RuntimeException("Houve um erro ao atualizar o usuário!", e);
         }
     }
     
@@ -56,7 +56,7 @@ public class UsuarioDAO {
             stm.execute();
             
         } catch (SQLException e){
-            throw new RuntimeException("Houve um erro ao deletar o novo usuário!", e);
+            throw new RuntimeException("Houve um erro ao deletar o usuário!", e);
         }
     }
     
@@ -101,7 +101,7 @@ public class UsuarioDAO {
             return pesquisaListaUsuarios(stm).get(0);
             
         } catch (SQLException e){
-            throw new RuntimeException("Houve na pesquisa de usuários!", e);
+            throw new RuntimeException("Houve um erro na pesquisa de usuários!", e);
         }
     }
     
