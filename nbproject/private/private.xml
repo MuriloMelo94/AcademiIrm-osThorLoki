@@ -4,16 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/view/MensagensAvisosView.java</file>
+            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/model/Funcionario.java</file>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/controller/FormCadastroFuncionarioController.java</file>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/view/MenuView.java</file>
-            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/view/LoginView.java</file>
-            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/controller/FormCadastroController.java</file>
+            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/dao/FuncionarioDAO.java</file>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/view/FormCadastroView.java</file>
-            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/model/Usuario.java</file>
-            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/controller/Main.java</file>
+            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/view/FormCadastroFuncionarioView.java</file>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/controller/Controle.java</file>
             <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/Murilo%20Melo/OneDrive/Documentos/NetBeansProjects/AcademiaIrmaosThorLoki/src/dao/ConnectionFactory.java</file>
         </group>
     </open-files>
 </project-private>
